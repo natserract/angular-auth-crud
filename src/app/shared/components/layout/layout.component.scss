@@ -1,0 +1,31 @@
+main {
+    height: 100%;
+    color: #000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    margin-top: 50px
+}
+
+.main-container {
+    width: 100%;
+}
+.mat-toolbar-row li {
+    list-style: none;
+}
+
+.mat-toolbar-row li a {
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logout-section-list button{
+    background: transparent;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    padding: 5px 0;
+}

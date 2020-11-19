@@ -1,0 +1,79 @@
+<app-layout>
+    <div class="employee-container">
+        <form class="employee-form" [formGroup]="forms" (ngSubmit)="submit($event)">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="nip">NIP *</label>
+                        <input type="text" formControlName="nip" required class="form-control" name="nip"
+                            maxlength="200" id="nip" placeholder="Your nip" />
+                        <div class="valid-feedback" *ngIf="forms.get('nip').errors && forms.get('nip').touched">
+                            Field ini wajib diisi.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="full_name">Full Name *</label>
+                        <input type="text" formControlName="full_name" required class="form-control" name="full_name"
+                            maxlength="200" id="full_name" placeholder="Your fullname" />
+                        <div class="valid-feedback"
+                            *ngIf="forms.get('full_name').errors && forms.get('full_name').touched">
+                            Field ini wajib diisi.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nick_name">Nick Name</label>
+                        <input type="text" formControlName="nick_name" class="form-control" name="nick_name"
+                            maxlength="200" id="nick_name" placeholder="Your nickname" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_date">Birth Date</label>
+                        <input type='date' formControlName="birth_date" class="form-control" name="birth_date"
+                            maxlength="200" id="birth_date" placeholder="Your birthdate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <input type="text" formControlName="address" required class="form-control" name="address"
+                            maxlength="200" id="address" placeholder="Your address" />
+                        <div class="valid-feedback" *ngIf="forms.get('address').errors && forms.get('address').touched">
+                            Field ini wajib diisi.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="text" formControlName="phone" required class="form-control" name="phone"
+                            maxlength="200" id="phone" placeholder="Your phone" />
+                        <div class="valid-feedback" *ngIf="forms.get('phone').errors && forms.get('phone').touched">
+                            Field ini wajib diisi.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="text" formControlName="mobile" class="form-control" name="mobile" maxlength="200"
+                            id="mobile" placeholder="Your mobile" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" formControlName="email" required class="form-control" name="email"
+                            maxlength="200" id="email" placeholder="Your email" />
+                        <div class="valid-feedback" *ngIf="forms.get('email').errors && forms.get('email').touched">
+                            Field ini wajib diisi.
+                        </div>
+                    </div>
+
+                    <div class="form-row-button" style="margin-top: 10px">
+                        <button mat-raised-button color="primary" [disabled]="forms.invalid || isSubmitted === true"
+                            class="btn btn-primary" type="submit">{{ isSubmitted ? 'Please wait...': 'Update Employee' }}</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</app-layout>

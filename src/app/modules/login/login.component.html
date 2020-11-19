@@ -1,0 +1,29 @@
+<main class="login">
+    <div class="login-container">
+        <form class="login-form" [formGroup]="forms" (ngSubmit)="submit($event)">
+            <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text" formControlName="loginUsername" required class="form-control" name="loginUsername"
+                    maxlength="200" id="loginUsername" placeholder="Your username" />
+                <div class="valid-feedback"
+                    *ngIf="forms.get('loginUsername').errors && forms.get('loginUsername').touched">
+                    Field ini wajib diisi.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="text" formControlName="loginPassword" required class="form-control" name="loginPassword"
+                    maxlength="200" id="loginPassword" placeholder="Your password" />
+                <div class="valid-feedback"
+                    *ngIf="forms.get('loginPassword').errors && forms.get('loginPassword').touched">
+                    Field ini wajib diisi.
+                </div>
+            </div>
+
+            <div class="form-row-button" style="margin-top: 10px">
+                <button mat-raised-button color="primary" [disabled]="forms.invalid || isSubmitted === true"
+                    class="btn btn-primary" type="submit">{{ isSubmitted ? 'Please wait...': 'Masuk' }}</button>
+            </div>
+        </form>
+    </div>
+</main>
