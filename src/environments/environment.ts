@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://api.smartbiz.id'
+  API_URL: 'https://yourapi.com'
 };
 
 /*
